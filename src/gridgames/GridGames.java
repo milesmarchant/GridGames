@@ -5,6 +5,10 @@
  */
 package gridgames;
 
+import gridgames.snake.SnakeCore;
+
+import javax.swing.JFrame;
+
 /**
  *
  * @author Marchant
@@ -17,7 +21,19 @@ public class GridGames {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+		JFrame window = new JFrame("Frame");
+		GraphicsCore graph = new GraphicsCore();
+		
+		window.setBounds(0, 0, graph.SCREENWIDTH, graph.SCREENHEIGHT);
+		window.setVisible(true);
+		window.add(graph);
+		graph.init();
+		window.setFocusable(true);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		SnakeCore snakeCore = new SnakeCore(graph, 1000, 20, 20);
+		snakeCore.init();
+		
         
     }
 

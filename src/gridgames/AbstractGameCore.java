@@ -15,6 +15,8 @@ import java.util.Random;
  * @author Marchant
  */
 public abstract class AbstractGameCore {
+	
+	protected GraphicsCore graphics;
     
     protected Random rand = new Random();
     
@@ -28,7 +30,8 @@ public abstract class AbstractGameCore {
     protected ActorList<ActorType> actors = new ActorList<>();
     protected StateList<StateType> states = new StateList<>();
     
-    protected AbstractGameCore(int ms_per_frame, int world_size_x, int world_size_y){
+    protected AbstractGameCore(GraphicsCore graphicsInput, int ms_per_frame, int world_size_x, int world_size_y){
+    	graphics = graphicsInput;
         MS_PER_FRAME = ms_per_frame;
         WORLD_SIZE_X = world_size_x;
         WORLD_SIZE_Y = world_size_y;

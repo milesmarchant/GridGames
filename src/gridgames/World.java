@@ -11,7 +11,7 @@ package gridgames;
  */
 public class World {
     
-    int[][] world;
+    protected int[][] world;
     
     public World(int sizeX, int sizeY){
         world = new int[sizeX][sizeY];
@@ -23,6 +23,10 @@ public class World {
     
     public int get(int x, int y){
         return world[x][y];
+    }
+    
+    public int[][] getWorld(){
+    	return world;
     }
     
 }

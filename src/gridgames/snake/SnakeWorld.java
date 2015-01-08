@@ -5,13 +5,15 @@
  */
 package gridgames.snake;
 
+import gridgames.World;
+
 /**
  *
  * @author Marchant
  */
-public class SnakeWorld extends gridgames.World {
+public class SnakeWorld extends World {
     
-    int[][] world;
+    //int[][] world;
 
     public SnakeWorld(int sizeX, int sizeY){
         super(sizeX, sizeY);

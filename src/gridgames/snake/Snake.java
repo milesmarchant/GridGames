@@ -23,6 +23,10 @@ public class Snake implements ActorType {
         }
     }
     
+    public LinkedList<Point> getSnake(){
+		return snake;
+    }
+    
     public boolean contains(Object O){
         return snake.contains(O);
     }
@@ -33,6 +37,10 @@ public class Snake implements ActorType {
     
     public Point getLast(){
         return snake.getLast();
+    }
+    
+    public Point removeFirst(){
+    	return snake.removeFirst();
     }
     
     public Point removeLast(){
