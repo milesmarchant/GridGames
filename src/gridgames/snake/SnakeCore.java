@@ -144,37 +144,39 @@ public class SnakeCore extends gridgames.AbstractGameCore {
         
         switch (dir){
             case up:
-                if(isLegalPoint(head.x, head.y-1)){
-                    snake.add(new Point(head.x, head.y-1));
-                    System.out.println("Went up");
-                    break;
-                }
+               snake.add(new Point(head.x, head.y-1));
+               System.out.println("Went up");
+               break;
             case right:
-                if(isLegalPoint(head.x+1, head.y)){
-                    snake.add(new Point(head.x+1, head.y));
-                    System.out.println("Went right");
-                    break;
-                }
+               snake.add(new Point(head.x+1, head.y));
+               System.out.println("Went right");
+               break;
             case down:
-                if(isLegalPoint(head.x, head.y+1)){
-                    snake.add(new Point(head.x, head.y+1));
-                    System.out.println("Went down");
-                    break;
-                }
+                snake.add(new Point(head.x, head.y+1));
+                System.out.println("Went down");
+                break;
             case left:
-                if(isLegalPoint(head.x-1, head.y)){
-                    snake.add(new Point(head.x-1, head.y));
-                    System.out.println("Went left");
-                    break;
-                }
-        }
-		
+                snake.add(new Point(head.x-1, head.y));
+                System.out.println("Went left");
+                break;
+        }		
 		
 		if(debug){
 			System.out.println("Head moved to:\nX: " + head.x + "\nY: " + head.y);
 		}
+        
+        head = snake.getLast();
+        
+        if(isLegalPoint(head.x, head.y)){
+        	for(Point p: snake.getSnake()){
+        		if(head.x == p.x || head.y == p.y){
+        			gameOver();
+        		}
+        	}
+        }
 		
 		if(world.get(head.x, head.y)==1){
+			world.set(head.x,  head.y, 0);
             genFood();
             score++;
         } else{
@@ -183,7 +185,13 @@ public class SnakeCore extends gridgames.AbstractGameCore {
         
     }
     
-    @Override
+    private void gameOver() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
     protected void render(){
         graphics.drawSnake(world, snake);
     }
