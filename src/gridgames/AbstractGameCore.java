@@ -5,8 +5,6 @@
  */
 package gridgames;
 
-//import gridgames.snake.Direction;
-import static gridgames.snake.Direction.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -23,6 +21,8 @@ public abstract class AbstractGameCore {
     protected final int MS_PER_FRAME;
     
     protected World world;
+    
+    protected ArrayList<Integer> inputQueue;
     
     protected final int WORLD_SIZE_X;
     protected final int WORLD_SIZE_Y;

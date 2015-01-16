@@ -6,13 +6,12 @@
 package gridgames.snake;
 
 import static gridgames.snake.Direction.right;
+import gridgames.AbstractGameCore;
 import gridgames.GraphicsCore;
 
 import java.awt.Point;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import java.awt.event.KeyEvent;
 
 
@@ -20,7 +19,7 @@ import java.awt.event.KeyEvent;
  *
  * @author Marchant
  */
-public class SnakeCore extends gridgames.AbstractGameCore {
+public class SnakeCore extends AbstractGameCore {
     
     /**
      * Number Conventions for world:
@@ -32,7 +31,6 @@ public class SnakeCore extends gridgames.AbstractGameCore {
     private Snake snake;
     private Point head;
     private int score;
-    private ArrayList<Integer> inputQueue;
     private SnakeGameState gameState;
     
     private boolean debug = true;
@@ -129,6 +127,7 @@ public class SnakeCore extends gridgames.AbstractGameCore {
     				} else if (gameState == SnakeGameState.paused){
     					gameState = SnakeGameState.running;
     				}
+    				break;
     		}
     	}
     	inputQueue.clear();

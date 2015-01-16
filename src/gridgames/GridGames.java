@@ -6,6 +6,7 @@
 package gridgames;
 
 import gridgames.snake.SnakeCore;
+import gridgames.z048.Z048Core;
 
 import javax.swing.JFrame;
 
@@ -31,9 +32,13 @@ public class GridGames {
 		window.setFocusable(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		/*
 		SnakeCore snakeCore = new SnakeCore(graph, 1000, 20, 20);
 		snakeCore.init();
+		*/
 		
+		Z048Core z048Core = new Z048Core(graph, 1000, 4, 4);
+		z048Core.init();
         
     }
 

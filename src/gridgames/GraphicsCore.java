@@ -21,8 +21,8 @@ import java.util.ArrayList;
  * @author Miles
  */
 public class GraphicsCore extends Canvas{
-	public static int SCREENWIDTH = 500;
-	public static int SCREENHEIGHT = 500;
+	public static int SCREENWIDTH = 400;
+	public static int SCREENHEIGHT = 400;
 	
 	public static int gridSizeX;
 	public static int gridSizeY;
